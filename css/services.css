@@ -8,6 +8,7 @@ html, body {
 
 nav {
     background:url(../assest/images/nav-bar-bg.png);
+    font-family: Arial, sans-serif;
   
       padding: 15px 0;
       position: fixed; 

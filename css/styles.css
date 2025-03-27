@@ -53,7 +53,7 @@ nav {
 }
 
 
-.logo:hover::after {
+ .logo:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
