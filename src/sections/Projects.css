@@ -156,7 +156,7 @@
   .project-grid-features {
     grid-template-columns: 1fr;
   }
-  .dayflow-showcase, .atm-showcase, .healthcare-showcase {
+  .dayflow-showcase, .atm-showcase, .healthcare-showcase, .ziya-showcase {
     grid-template-columns: 1fr;
   }
   .ziya-showcase .project-title {

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Download, ChevronRight, Terminal } from 'lucide-react';
+import { Mail, MapPin, Download, ChevronRight, Terminal, ExternalLink } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../components/Icons';
 import './Hero.css';
 import profileImage from '../assets/profile_placeholder_1783539495447.png';
 
 const Hero = () => {
   const [text, setText] = useState('');
+  const [nameText, setNameText] = useState('');
   const fullText = "Build scalable backend systems, intelligent AI workflows, and production-ready software using Python, FastAPI, LangGraph, and Generative AI.";
+  const fullName = "Rajesh R.";
   
   useEffect(() => {
     let index = 0;
@@ -17,6 +19,38 @@ const Hero = () => {
       if (index > fullText.length) clearInterval(interval);
     }, 30);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    let currentText = '';
+    let isDeleting = false;
+    let timeoutId;
+
+    const type = () => {
+      if (isDeleting) {
+        currentText = fullName.substring(0, currentText.length - 1);
+      } else {
+        currentText = fullName.substring(0, currentText.length + 1);
+      }
+
+      setNameText(currentText);
+
+      let typeSpeed = 150;
+      if (isDeleting) typeSpeed /= 2;
+
+      if (!isDeleting && currentText === fullName) {
+        typeSpeed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && currentText === '') {
+        isDeleting = false;
+        typeSpeed = 500;
+      }
+
+      timeoutId = setTimeout(type, typeSpeed);
+    };
+
+    timeoutId = setTimeout(type, 150);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const containerVariants = {
@@ -54,7 +88,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="hero-title">
-            Hi, I'm Rajesh R.
+            Hi, I'm <span className="animated-name">{nameText}</span><span className="cursor name-cursor">|</span>
             <br />
             <span className="glow-text">Python Backend Developer</span>
             <br />
@@ -69,8 +103,8 @@ const Hero = () => {
             <a href="#projects" className="btn btn-primary">
               Explore My Work <ChevronRight size={18} />
             </a>
-            <a href="/resume.pdf" className="btn btn-secondary">
-              <Download size={18} /> Download Resume
+            <a href="https://drive.google.com/file/d/1K7rVzx8nmE8ZPgF4OAB7u0CXv5cRtjwK/view?usp=sharing" target="_blank" rel="noreferrer" className="btn btn-secondary">
+              <ExternalLink size={18} /> View Resume
             </a>
           </motion.div>
 
@@ -126,15 +160,14 @@ const Hero = () => {
             </div>
             <div className="terminal-body">
               <code>
-                <span className="keyword">from</span> fastapi <span className="keyword">import</span> FastAPI<br />
-                <span className="keyword">import</span> langchain<br />
-                <span className="keyword">import</span> langgraph<br />
-                <br />
-                app = FastAPI(title=<span className="string">"AI Backend"</span>)<br />
-                <br />
-                <span className="comment"># Initializing agentic workflow</span><br />
-                agent = langgraph.create_agent()<br />
-                agent.start()
+                <span className="keyword">uvicorn</span> main:app --reload<br />
+                <span className="comment">INFO</span>: Loading modules...<br />
+                [<span className="keyword">✓</span>] FastAPI & SQLAlchemy<br />
+                [<span className="keyword">✓</span>] LangGraph & LangChain<br />
+                [<span className="keyword">✓</span>] JWT Auth Security<br />
+                <span className="string">-------------------------</span><br />
+                <span className="comment">INFO</span>: Server started on port 8000<br />
+                <span className="keyword">[ SYS: RAJESH BACKEND ACTIVE ]</span>
               </code>
             </div>
           </div>

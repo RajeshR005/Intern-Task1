@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Code, Layers, Server, Activity, ShieldCheck, Zap } from 'lucide-react';
 import { GithubIcon } from '../components/Icons';
 import './Projects.css';
-import ziyaImg from '../assets/Ziya_Interface.png';
+import ziyaImg from '../assets/ziya_dashboard_mockup.png';
 import dayflowImg from '../assets/dayflow_dashboard_placeholder_1783539547660.png';
 import atmCliImg from '../assets/atm_cli.png';
 import healthcareImg from '../assets/healthcare.png';
