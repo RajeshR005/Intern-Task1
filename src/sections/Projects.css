@@ -1,0 +1,165 @@
+.projects {
+  background-color: var(--bg-main);
+  padding: 8rem 0;
+}
+
+.project-showcase {
+  margin-bottom: 8rem;
+}
+
+.project-showcase:last-child {
+  margin-bottom: 0;
+}
+
+.project-hero-image {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3rem;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.browser-header {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.browser-dots span:nth-child(1) { background: #ef4444; }
+.browser-dots span:nth-child(2) { background: #f59e0b; }
+.browser-dots span:nth-child(3) { background: #10b981; }
+
+.browser-url {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  margin: 0 2rem;
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+.project-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-hero-image:hover img {
+  transform: scale(1.02);
+}
+
+.project-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-tech-stack span {
+  background: rgba(139, 92, 246, 0.1);
+  color: #a78bfa;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.project-grid-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.feature-block {
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.feature-block h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.feature-block h4 svg {
+  color: var(--accent-primary);
+}
+
+.feature-block p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.project-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
+
+/* Secondary Specific Layout */
+.dayflow-showcase, .atm-showcase, .healthcare-showcase, .ziya-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.dayflow-showcase .project-title, .atm-showcase .project-title, .healthcare-showcase .project-title, .ziya-showcase .project-title {
+  font-size: 2rem;
+}
+.compact-features {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.dayflow-showcase .project-hero-image, .atm-showcase .project-hero-image, .healthcare-showcase .project-hero-image, .ziya-showcase .project-hero-image {
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .project-grid-features {
+    grid-template-columns: 1fr;
+  }
+  .dayflow-showcase, .atm-showcase, .healthcare-showcase {
+    grid-template-columns: 1fr;
+  }
+  .ziya-showcase .project-title {
+    font-size: 2.2rem;
+  }
+}
